@@ -1,4 +1,3 @@
-````md
 # ES6 Intro: var vs let vs const — Complete Practice Set
 
 ## Topic Overview
@@ -43,7 +42,6 @@
 const name = "Bangladesh";
 const countryName = "BD" + name;
 ```
-````
 
 ➡️ String concatenation + const usage
 
@@ -338,15 +336,3 @@ Decision making in code design
 ✔ interview-level reasoning
 
 ---
-
-### পরের ধাপ?
-
-তুমি চাইলে:
-
-- এই প্রশ্নগুলোর **answer check** করতে পারি
-- অথবা next Topic:
-  👉 **Arrow Function**,
-  👉 **Template String**,
-  👉 **Destructuring**
-
-👉 বলো, কোনটা next? 🚀
