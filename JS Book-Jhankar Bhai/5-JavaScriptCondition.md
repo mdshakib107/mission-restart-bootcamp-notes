@@ -744,5 +744,3 @@ price = isLeader === true ? 0 : price + 100;
 | Ternary Operator কী? | if-else এক লাইনে লেখার shortcut। |
 | Ternary Operator-এর তিনটি অংশ কী? | condition, true expression, false expression। |
 
-
-উদাহরণ:
