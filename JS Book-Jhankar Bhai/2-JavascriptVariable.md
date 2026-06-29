@@ -1,7 +1,3 @@
-অবশ্যই। আমি কিছুই বাদ দিইনি—আপনার আপলোড করা Markdown ফাইলটি সম্পূর্ণ 그대로 একটি নতুন .md ফাইল হিসেবে প্রস্তুত করেছি।
-
-ডাউনলোড করুন:
-JavaScript_Notes_Full.md
 # ভেরিয়েবল, Console, String, Boolean ও JavaScript দিয়ে গণিত — গুরুত্বপূর্ণ নোট
 
 ---
@@ -127,40 +123,16 @@ const weight = 38;
 
 # পরীক্ষার জন্য গুরুত্বপূর্ণ প্রশ্ন
 
-### Variable কী?
-
-**উত্তর:** কোনো মান বা তথ্য রাখার নামযুক্ত জায়গা।
-
-### Variable-এর মান কি পরিবর্তন হতে পারে?
-
-**উত্তর:** হ্যাঁ।
-
-### Variable-এর নাম কেন দরকার?
-
-**উত্তর:** Data কী বোঝাচ্ছে তা বুঝতে।
-
-### `const weight = 38;` এখানে Variable Name কোনটি?
-
-**উত্তর:** `weight`
-
-### `const weight = 38;` এখানে Value কোনটি?
-
-**উত্তর:** `38`
-
-### Equal Sign (=) কী কাজে লাগে?
-
-**উত্তর:** Variable-এর মধ্যে Value Set করতে।
-
-### Semicolon (;) কী বোঝায়?
-
-**উত্তর:** একটি Code Line শেষ হয়েছে।
-
-### JavaScript-এ Semicolon কি বাধ্যতামূলক?
-
-**উত্তর:** না, Optional।
-
----
-
+| প্রশ্ন | উত্তর |
+|---|---|
+| Variable কী? | কোনো মান বা তথ্য রাখার নামযুক্ত জায়গা। |
+| Variable-এর মান কি পরিবর্তন হতে পারে? | হ্যাঁ। |
+| Variable-এর নাম কেন দরকার? | Data কী বোঝাচ্ছে তা বুঝতে। |
+| `const weight = 38;` এখানে Variable Name কোনটি? | `weight` |
+| `const weight = 38;` এখানে Value কোনটি? | `38` |
+| Equal Sign (=) কী কাজে লাগে? | Variable-এর মধ্যে Value Set করতে। |
+| Semicolon (;) কী বোঝায়? | একটি Code Line শেষ হয়েছে। |
+| JavaScript-এ Semicolon কি বাধ্যতামূলক? | না, Optional। |
 # Console ও console.log()
 
 ## Console কী?
@@ -258,40 +230,15 @@ console.log(money);
 
 # পরীক্ষার জন্য গুরুত্বপূর্ণ প্রশ্ন
 
-### Console কী?
-
-**উত্তর:** Output দেখানোর জায়গা।
-
-### JavaScript-এ Output দেখাতে কী ব্যবহার করা হয়?
-
-**উত্তর:** `console.log()`
-
-### `console.log(403);` এর Output কী?
-
-**উত্তর:** `403`
-
-### Variable-এর Value Console-এ দেখতে কী করতে হয়?
-
-**উত্তর:**
-
-```javascript
-console.log(variableName);
-```
-
-### `const money = 835; console.log(money);` এর Output কী?
-
-**উত্তর:** `835`
-
-### console.log()-এর Bracket-এর ভিতরে কী লেখা হয়?
-
-**উত্তর:** যে Value বা Variable Output হিসেবে দেখতে চাই।
-
-### অনেক Programming Language-এ Output দেখানোকে কী বলা হয়?
-
-**উত্তর:** Print করা।
-
----
-
+| প্রশ্ন | উত্তর |
+|---|---|
+| Console কী? | Output দেখানোর জায়গা। |
+| JavaScript-এ Output দেখাতে কী ব্যবহার করা হয়? | `console.log()` |
+| `console.log(403);` এর Output কী? | `403` |
+| Variable-এর Value Console-এ দেখতে কী করতে হয়? |  |
+| `const money = 835; console.log(money);` এর Output কী? | `835` |
+| console.log()-এর Bracket-এর ভিতরে কী লেখা হয়? | যে Value বা Variable Output হিসেবে দেখতে চাই। |
+| অনেক Programming Language-এ Output দেখানোকে কী বলা হয়? | Print করা। |
 # String ধরে মারো টান
 
 ## String কী?
@@ -402,36 +349,15 @@ Rahim
 
 # পরীক্ষার জন্য গুরুত্বপূর্ণ প্রশ্ন
 
-### String কী?
-
-**উত্তর:** এক বা একাধিক অক্ষর, শব্দ বা বাক্যের সমষ্টি।
-
-### String Value কীসের মধ্যে লিখতে হয়?
-
-**উত্তর:** Quotation-এর মধ্যে।
-
-### কোন Quotation ব্যবহার করা যায়?
-
-**উত্তর:** Single (`' '`) বা Double (`" "`)
-
-### `const name = "sadaruddin";` এখানে String Value কোনটি?
-
-**উত্তর:** `"sadaruddin"`
-
-### `const phone = "Samsung";` এখানে Variable Name কোনটি?
-
-**উত্তর:** `phone`
-
-### String Output দেখতে কী ব্যবহার করা হয়?
-
-**উত্তর:** `console.log()`
-
-### Number আর String-এর পার্থক্য কী?
-
-**উত্তর:** Number সংখ্যা বোঝায়, String Text বোঝায়।
-
----
-
+| প্রশ্ন | উত্তর |
+|---|---|
+| String কী? | এক বা একাধিক অক্ষর, শব্দ বা বাক্যের সমষ্টি। |
+| String Value কীসের মধ্যে লিখতে হয়? | Quotation-এর মধ্যে। |
+| কোন Quotation ব্যবহার করা যায়? | Single (`' '`) বা Double (`" "`) |
+| `const name = "sadaruddin";` এখানে String Value কোনটি? | `"sadaruddin"` |
+| `const phone = "Samsung";` এখানে Variable Name কোনটি? | `phone` |
+| String Output দেখতে কী ব্যবহার করা হয়? | `console.log()` |
+| Number আর String-এর পার্থক্য কী? | Number সংখ্যা বোঝায়, String Text বোঝায়। |
 # কানামাছি true কানামাছি false
 
 ## Boolean কী?
@@ -531,36 +457,15 @@ false
 
 # পরীক্ষার জন্য গুরুত্বপূর্ণ প্রশ্ন
 
-### Boolean কী?
-
-**উত্তর:** এমন Data Type যার মান true বা false হয়।
-
-### Yes বোঝাতে কী লেখা হয়?
-
-**উত্তর:** `true`
-
-### No বোঝাতে কী লেখা হয়?
-
-**উত্তর:** `false`
-
-### true বা false কি Quotation-এর মধ্যে লিখতে হয়?
-
-**উত্তর:** না।
-
-### `"true"` আর `true` কি একই?
-
-**উত্তর:** না। `"true"` String, `true` Boolean।
-
-### `const passed = false;` এখানে Value কোনটি?
-
-**উত্তর:** `false`
-
-### Boolean কোন ধরনের প্রশ্নের জন্য ব্যবহার হয়?
-
-**উত্তর:** Yes/No ধরনের প্রশ্ন।
-
----
-
+| প্রশ্ন | উত্তর |
+|---|---|
+| Boolean কী? | এমন Data Type যার মান true বা false হয়। |
+| Yes বোঝাতে কী লেখা হয়? | `true` |
+| No বোঝাতে কী লেখা হয়? | `false` |
+| true বা false কি Quotation-এর মধ্যে লিখতে হয়? | না। |
+| `"true"` আর `true` কি একই? | না। `"true"` String, `true` Boolean। |
+| `const passed = false;` এখানে Value কোনটি? | `false` |
+| Boolean কোন ধরনের প্রশ্নের জন্য ব্যবহার হয়? | Yes/No ধরনের প্রশ্ন। |
 # জাভাস্ক্রিপ্ট দিয়ে গণিত
 
 ## মূল ধারণা
@@ -729,42 +634,15 @@ console.log(discountedPrice);
 
 # পরীক্ষার জন্য গুরুত্বপূর্ণ প্রশ্ন
 
-### JavaScript-এ যোগ করার Operator কোনটি?
-
-**উত্তর:** `+`
-
-### JavaScript-এ গুণ করার Operator কোনটি?
-
-**উত্তর:** `*`
-
-### JavaScript-এ ভাগ করার Operator কোনটি?
-
-**উত্তর:** `/`
-
-### JavaScript-এ ভাগশেষ বের করার Operator কোনটি?
-
-**উত্তর:** `%`
-
-### `10 / 3` করলে কী ধরনের Output আসতে পারে?
-
-**উত্তর:** দশমিকসহ Result।
-
-### `10 % 3` এর Output কী?
-
-**উত্তর:** `1`
-
-### দুইটি String যোগ করলে কী হয়?
-
-**উত্তর:** পাশাপাশি বসে যায়।
-
-### `20 + "20"` এর Output কী হবে?
-
-**উত্তর:** `2020`
-
-### ছোট সংখ্যা থেকে বড় সংখ্যা বিয়োগ করলে Result কেমন হয়?
-
-**উত্তর:** Negative হয়।
-
-### Programming শেখার জন্য সবচেয়ে দরকারি কাজ কী?
-
-**উত্তর:** বেশি বেশি Practice করা।
+| প্রশ্ন | উত্তর |
+|---|---|
+| JavaScript-এ যোগ করার Operator কোনটি? | `+` |
+| JavaScript-এ গুণ করার Operator কোনটি? | `*` |
+| JavaScript-এ ভাগ করার Operator কোনটি? | `/` |
+| JavaScript-এ ভাগশেষ বের করার Operator কোনটি? | `%` |
+| `10 / 3` করলে কী ধরনের Output আসতে পারে? | দশমিকসহ Result। |
+| `10 % 3` এর Output কী? | `1` |
+| দুইটি String যোগ করলে কী হয়? | পাশাপাশি বসে যায়। |
+| `20 + "20"` এর Output কী হবে? | `2020` |
+| ছোট সংখ্যা থেকে বড় সংখ্যা বিয়োগ করলে Result কেমন হয়? | Negative হয়। |
+| Programming শেখার জন্য সবচেয়ে দরকারি কাজ কী? | বেশি বেশি Practice করা। |
