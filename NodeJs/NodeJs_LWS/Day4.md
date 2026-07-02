@@ -1,5 +1,5 @@
 
-```markdown
+
 # 📘 Node.js Global Object & Module System — Extended Study Notes
 
 ## 📋 Table of Contents
@@ -62,7 +62,6 @@ console.log("ফাইলের নিজস্ব পাথ (__filename): ", __
 
 ```
 
----
 
 ## 4. Node.js Module System (The Core Foundation)
 
