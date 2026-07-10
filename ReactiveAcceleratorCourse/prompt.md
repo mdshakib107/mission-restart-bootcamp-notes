@@ -1,128 +1,172 @@
-আমি একটি React tutorial video-এর transcript/text upload করছি। তুমি এই transcript থেকে বাংলায় বইয়ের মতো detailed study notes তৈরি করবে, যাতে শুধু notes পড়েই ভিডিওর সব concept পরিষ্কারভাবে বুঝতে পারি। আমার লক্ষ্য হলো future revision, interview/exam preparation এবং practical coding practice-এর জন্য এই notes ব্যবহার করা।
+আমি একটি React tutorial video-এর transcript/text upload করব। তুমি transcript অনুসরণ করে বাংলায় একটি complete, detailed এবং beginner-friendly study note তৈরি করবে।
 
-## মূল নির্দেশনা
+## Goal
 
-1. Notes অবশ্যই Markdown `.md` format-এ হবে।
-2. শেষে একটি downloadable `.md` file তৈরি করে দেবে।
-3. ভাষা হবে সহজ, পরিষ্কার বাংলা; তবে technical/programming terms English-এই থাকবে। যেমন:
-   React, component, JSX, props, state, hook, useState, useEffect, event handling, conditional rendering, list rendering, key, form, controlled component, uncontrolled component, React Router, Context API, virtual DOM, render, re-render, lifecycle, npm, Vite, package.json, module, import, export ইত্যাদি।
-4. Notes এমনভাবে লিখবে যেন beginner student ভিডিও না দেখেও পুরো lesson বুঝতে পারে।
-5. শুধু summary নয়; detailed explanation, example, practical use case, common mistake, best practice—সবকিছু দিতে হবে।
-6. Transcript-এ যেসব concept, গল্প, explanation, analogy, warning, assignment বা task আছে, সেগুলো অবশ্যই notes-এ থাকবে এবং video transcript-এর সাথে মিল রাখতে হবে।
-7. Transcript-এ যদি কোনো বিষয় অস্পষ্ট বা অসম্পূর্ণ থাকে, তাহলে beginner-friendlyভাবে ব্যাখ্যা পূর্ণ করবে, কিন্তু যেখানে অনুমান করবে সেখানে স্পষ্টভাবে লিখবে: “এখানে transcript থেকে অনুমান করে ব্যাখ্যা করা হয়েছে।”
-8. যেখানে দরকার table ব্যবহার করবে।
-9. যেখানে code আছে, সেগুলো proper Markdown code block-এ লিখবে।
-10. Code থাকলে শুধু code block দিলেই হবে না; গুরুত্বপূর্ণ line-by-line explanation দিতে হবে।
-11. প্রতিটি important concept-এর জন্য দিতে হবে:
-    - Concept কী
-    - কেন দরকার
-    - কীভাবে কাজ করে
-    - React project-এ কোথায় ব্যবহার হয়
-    - সহজ example
-    - code example, যদি প্রাসঙ্গিক হয়
-    - common mistakes
-    - best practices
-    - মনে রাখার নিয়ম
-12. Notes beginner থেকে intermediate learner-এর জন্য suitable হবে।
-13. খুব ছোট করে লিখবে না। Complete, organized, explanatory এবং documentation-style হতে হবে।
-14. Notes এমনভাবে সাজাবে যেন এটা একটি React বইয়ের chapter-এর মতো লাগে।
+Notes এমন হবে যাতে:
 
----
+* ভিডিও না দেখেও পুরো lesson বোঝা যায়
+* future revision করা যায়
+* interview ও exam preparation করা যায়
+* practical coding practice করা যায়
+* beginner থেকে intermediate learner উপকৃত হয়
 
-# Required Output Structure
+## Output Requirements
 
-## Title
+* Output অবশ্যই Markdown `.md` format-এ হবে
+* শেষে একটি downloadable `.md` file তৈরি করবে
+* ভাষা সহজ ও পরিষ্কার বাংলা হবে
+* Programming এবং React-related technical terms English-এ রাখবে
+* Notes বইয়ের chapter বা technical documentation-এর মতো organized হবে
+* শুধু summary লিখবে না; বিস্তারিত explanation দেবে
+* Transcript-এর সব concept, example, analogy, warning, assignment এবং task অন্তর্ভুক্ত করবে
+* Transcript-এ code থাকলে proper Markdown code block ব্যবহার করবে
+* গুরুত্বপূর্ণ code line-by-line ব্যাখ্যা করবে
+* প্রয়োজন অনুযায়ী table ব্যবহার করবে
+* Transcript-এ নেই এমন topic অপ্রয়োজনে যোগ করবে না
 
-ভিডিও/lesson-এর topic অনুযায়ী সুন্দর একটি title দেবে।
+## Technical Terms
+
+নিচের মতো terms English-এ রাখবে:
+
+React, component, JSX, props, state, hook, useState, useEffect, event handling, conditional rendering, list rendering, key, form, controlled component, React Router, Context API, virtual DOM, render, re-render, lifecycle, npm, Vite, package.json, module, import, export
+
+## Missing or Unclear Information
+
+Transcript-এর কোনো অংশ অসম্পূর্ণ বা অস্পষ্ট হলে beginner-friendly explanation দিয়ে পূর্ণ করবে।
+
+অনুমানভিত্তিক explanation-এর আগে লিখবে:
+
+> এখানে transcript থেকে অনুমান করে ব্যাখ্যা করা হয়েছে।
+
+## Required Markdown Structure
+
+# Lesson Title
 
 ## Overview
 
-এই lesson-এ কী শেখানো হয়েছে, কেন important, এবং React শেখার journey-তে এই topic-এর ভূমিকা কী—তা ব্যাখ্যা করবে।
+এই lesson-এ কী শেখানো হয়েছে, কেন গুরুত্বপূর্ণ এবং React শেখার journey-তে এর ভূমিকা ব্যাখ্যা করবে।
 
 ## Prerequisites
 
-এই lesson বুঝতে আগে কী কী জানা দরকার, যেমন:
-- HTML
-- CSS
-- JavaScript basics
-- function
-- array
-- object
-- ES6 syntax
-- import/export
-- npm basics
+Transcript অনুযায়ী lesson বুঝতে আগে কী কী জানা প্রয়োজন তা লিখবে।
 
-Transcript অনুযায়ী প্রয়োজনীয় prerequisites লিখবে।
+উদাহরণ:
+
+* HTML
+* CSS
+* JavaScript basics
+* function
+* array
+* object
+* ES6 syntax
+* import/export
+* npm basics
 
 ## Table of Contents
 
-Notes-এর সব major section নিয়ে clickable Markdown table of contents তৈরি করবে।
+সব major section-এর clickable Markdown link তৈরি করবে।
 
 ## Main Concepts
 
-Transcript-এ আসা সব React concept section-wise সাজাবে। যেমন:
-
-- React কী
-- React কেন ব্যবহার করা হয়
-- Component কী
-- JSX কী
-- Props কী
-- State কী
-- Hook কী
-- useState
-- useEffect
-- Event Handling
-- Conditional Rendering
-- List Rendering
-- Key
-- Form Handling
-- Component Reuse
-- File/Folder Structure
-- React Project Setup
-- npm/Vite/package.json
-- React Router
-- Context API
-
-শুধু যেগুলো transcript-এ আছে সেগুলোই main topic হিসেবে রাখবে। তবে কোনো topic বুঝতে background explanation দরকার হলে সেটা সংক্ষিপ্তভাবে যোগ করবে।
+Transcript-এ থাকা সব গুরুত্বপূর্ণ concept-এর তালিকা দেবে।
 
 ## Detailed Explanation
 
-প্রতিটি topic বইয়ের মতো ব্যাখ্যা করবে।
+প্রতিটি গুরুত্বপূর্ণ concept-এর জন্য নিচের format অনুসরণ করবে:
 
-প্রতিটি topic-এর format হবে:
-
-### Topic Name
+### Concept Name
 
 #### Concept কী?
 
-সহজ বাংলায় ব্যাখ্যা করবে।
+সহজ বাংলায় সংজ্ঞা ও মূল ধারণা ব্যাখ্যা করবে।
 
 #### কেন দরকার?
 
-React application বানাতে এই concept কেন দরকার, তা ব্যাখ্যা করবে।
+React application-এ concept-টির প্রয়োজনীয়তা ব্যাখ্যা করবে।
 
 #### কীভাবে কাজ করে?
 
-ভিতরের working বা flow ব্যাখ্যা করবে। যেমন state change হলে re-render হয়, props parent থেকে child component-এ যায়, JSX শেষ পর্যন্ত JavaScript-এ convert হয় ইত্যাদি।
+Concept-এর working process, data flow বা internal behavior ব্যাখ্যা করবে।
 
-#### Practical Use Case
+#### React Project-এ কোথায় ব্যবহার হয়?
 
-বাস্তব React project-এ কোথায় ব্যবহার হবে তা বলবে।
+বাস্তব project-এর use case দেবে।
 
-#### Example
+#### সহজ Example
 
-সহজ উদাহরণ দেবে।
+Beginner-friendly বাস্তব বা দৈনন্দিন উদাহরণ দেবে।
 
 #### Code Example
 
-Transcript-এ code থাকলে সেটি পরিষ্কার করে লিখবে। যদি transcript-এ code না থাকে কিন্তু concept বোঝার জন্য দরকার হয়, তাহলে ছোট example দিতে পারো এবং উল্লেখ করবে যে এটি explanatory example।
+Transcript-এর code পরিষ্কার ও সঠিকভাবে লিখবে।
 
-// code here
+Transcript-এ code না থাকলেও concept বোঝাতে প্রয়োজন হলে ছোট explanatory example দিতে পারবে। সে ক্ষেত্রে লিখবে:
 
+> নিচের code-টি concept বোঝানোর জন্য explanatory example।
 
-## Common Mistakes 
+#### Code Explanation
 
-## Best Practices 
-## Quick Revision 
-## Interview / Exam Style Questions 
+Code-এর গুরুত্বপূর্ণ line বা block ধাপে ধাপে ব্যাখ্যা করবে।
+
+#### Common Mistakes
+
+Beginner-রা কী কী ভুল করতে পারে তা লিখবে।
+
+#### Best Practices
+
+সঠিক ও maintainable code লেখার নিয়ম দেবে।
+
+#### মনে রাখার নিয়ম
+
+Concept দ্রুত মনে রাখার জন্য ছোট mnemonic, rule বা summary দেবে।
+
+## Overall Common Mistakes
+
+পুরো lesson সম্পর্কিত common mistakes একসঙ্গে লিখবে।
+
+## Best Practices
+
+Lesson-এর সব গুরুত্বপূর্ণ best practice সংক্ষেপে সাজাবে।
+
+## Practical Coding Tasks
+
+Transcript অনুযায়ী coding exercise, assignment বা practice task তৈরি করবে।
+
+প্রতিটি task-এর জন্য প্রয়োজন হলে দেবে:
+
+* Task description
+* Expected output
+* Hint
+* Difficulty level
+
+## Quick Revision
+
+Bullet point বা table-এর মাধ্যমে দ্রুত revision notes তৈরি করবে।
+
+## Interview / Exam Style Questions
+
+নিচের ধরনের প্রশ্ন তৈরি করবে:
+
+* Short questions
+* Conceptual questions
+* Code-based questions
+* Difference-based questions
+* Scenario-based questions
+
+প্রতিটি গুরুত্বপূর্ণ প্রশ্নের সংক্ষিপ্ত উত্তরও দেবে।
+
 ## Key Takeaways
+
+Lesson-এর সবচেয়ে গুরুত্বপূর্ণ বিষয়গুলো concise bullet point-এ লিখবে।
+
+## Final Quality Check
+
+Final output দেওয়ার আগে নিশ্চিত করবে:
+
+* Transcript-এর কোনো গুরুত্বপূর্ণ বিষয় বাদ যায়নি
+* একই বিষয় অপ্রয়োজনে বারবার লেখা হয়নি
+* Code syntactically correct
+* Markdown headings ও code blocks সঠিক
+* Table of contents links কাজ করার মতো format-এ আছে
+* Notes beginner-friendly কিন্তু যথেষ্ট detailed
+* Downloadable `.md` file তৈরি করা হয়েছে
