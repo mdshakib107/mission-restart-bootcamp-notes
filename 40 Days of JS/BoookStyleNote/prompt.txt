@@ -4,25 +4,20 @@
 
 Output format:
 
-1. Notes অবশ্যই Markdown `.md` format-এ হবে।
-2. শেষে একটি downloadable `.md` file তৈরি করে দেবে।
+1. Notes অবশ্যই Markdown `.md` format-এ হবে।শেষে একটি downloadable `.md` file তৈরি করে দেবে।
+2. ট্রান্সক্রিপ্টে উল্লেখ করা ডেফিনেশন গুলো ইন্সট্রাকটর যেভাবে দিয়েছে সেভাবেই এড করবে।
 3. ভাষা হবে সহজ বাংলা, কিন্তু programming terms যেমন variable, function, object, array, primitive, non-primitive, DOM, async, defer, scope ইত্যাদি English-এই রাখবে।
 4. Notes এমনভাবে লিখবে যেন beginner student ভিডিও না দেখেও lesson পুরো বুঝতে পারে।
 5. শুধু summary নয়, detailed explanation দিতে হবে।
-6. ভিডিওতে যেসব concept এসেছে সেগুলো section-wise সাজাবে।ট্রান্সক্রিপ্টে যেসব বিষয় আছে, কথাগুলো অবশ্যই ভিডীও এর ট্রান্সক্রিপ্ট এর সাথে মিল রাখবে(যে কোনো ধরনের গল্প বা অন্য কিছু)।এনালজি গুলো সেম রাখবে। ভিডীও এর প্রত্যাক টপিকের আগে টিচার যে কথা গুলো বলে সেগুলোও উল্লেখ করবে।  
+6. ভিডিওতে যেসব concept এসেছে সেগুলো section-wise সাজাবে।ট্রান্সক্রিপ্টে যেসব বিষয় আছে, কথাগুলো অবশ্যই ভিডীও এর ট্রান্সক্রিপ্ট এর সাথে মিল রাখবে(যে কোনো ধরনের গল্প বা অন্য কিছু)।এনালজি গুলো সেম রাখবে। ভিডীও এর প্রত্যাক টপিকের আগে টিচার যে কথা গুলো বলে যে ব্যাকগ্রাউন্ড উল্লেখ করে(আগের ভিডীওতে দেখেছি সামনে দেখবো ইত্যাদি ) সেগুলোও উল্লেখ করবে।  
 7. যেখানে দরকার table ব্যবহার করবে।
 8. যেখানে code আছে, সেগুলো proper code block-এ দেবে।
 9. প্রতিটি important concept-এর সহজ explanation, example, common mistake, এবং মনে রাখার নিয়ম দেবে।
 10. ভিডিওতে assignment/task থাকলে শেষে আলাদা Assignment section বানাবে।
 11. শেষে Final Summary এবং Practice Checklist দেবে।
-12. Notes structured হবে, যেমন:
+12. Notes structured Table of Contents সহ লেকচার ফ্লো অনুযায়ী হবে যেখানে কোডের এক্সাম্পল, কমন মিস্টেক, ইন্টারভিউ কোশ্চেন উল্লেখ হবে।
 
-* Table of Contents
-* Main concepts
-* Code examples
-* Important differences
-* Common mistakes
-* Assignment
-* Final summary
+
+
 
 আমার লক্ষ্য হলো এই notes future revision-এর জন্য ব্যবহার করা, তাই output যতটা possible complete, organized, beginner-friendly এবং বইয়ের মতো explanatory হবে।
