@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stack vs Heap Memory Animation</title>
+<style>
+:root{
+  --bg:#090b10; --panel:#111722; --text:#f3f6fb; --muted:#aeb7c7;
+  --stack:#ff6f86; --heap:#55aaff; --yellow:#ffd166; --green:#8df0a4;
+  --purple:#b98cff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; background:
+  radial-gradient(circle at 20% 20%, rgba(255,111,134,.12), transparent 30%),
+  radial-gradient(circle at 80% 25%, rgba(85,170,255,.12), transparent 32%),
+  linear-gradient(135deg,#07080c,#0c111a 55%,#06070a);
+  color:var(--text); font-family:Inter,Segoe UI,Arial,sans-serif; overflow:hidden;
+}
+.stage{height:100vh; display:grid; grid-template-rows:auto 1fr auto; padding:28px 42px 24px}
+.title{text-align:center}
+.title h1{margin:0; font-size:38px; letter-spacing:.4px}
+.title p{margin:8px 0 0; color:var(--muted); font-size:18px}
+.scene{position:relative; display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:80px}
+.card{
+  position:relative; height:520px; border:1px solid rgba(255,255,255,.08);
+  background:rgba(17,23,34,.52); border-radius:28px; box-shadow:0 20px 80px rgba(0,0,0,.35);
+  backdrop-filter:blur(12px); overflow:hidden;
+}
+.card-title{position:absolute; left:0; right:0; bottom:20px; text-align:center; font-size:30px; font-weight:700}
+.card-title span{font-size:16px; display:block; margin-top:6px; color:var(--muted); font-weight:400}
+.stack-box{
+  position:absolute; left:50%; top:54px; transform:translateX(-50%);
+  width:230px; height:370px; border:3px solid var(--stack); border-radius:24px;
+  box-shadow:0 0 28px rgba(255,111,134,.18), inset 0 0 24px rgba(255,111,134,.08);
+  overflow:hidden;
+}
+.slot{height:46.25px; border-top:1.5px solid rgba(255,111,134,.8)}
+.slot:first-child{border-top:0}
+.stack-fill{
+  position:absolute; inset:0; opacity:.22;
+  background:repeating-linear-gradient(135deg, var(--stack) 0 2px, transparent 2px 8px);
+}
+.heap-space{position:absolute; inset:35px 35px 80px}
+.blob{
+  position:absolute; border:3px solid var(--heap); border-radius:50%;
+  background:repeating-linear-gradient(135deg, rgba(85,170,255,.35) 0 2px, transparent 2px 8px);
+  box-shadow:0 0 28px rgba(85,170,255,.2);
+  animation:float 5s ease-in-out infinite;
+}
+.b1{left:50px;top:25px;width:110px;height:145px}.b2{right:80px;top:24px;width:145px;height:70px;animation-delay:-1s}
+.b3{right:70px;top:145px;width:135px;height:175px;animation-delay:-2s}.b4{left:185px;top:250px;width:92px;height:118px;animation-delay:-.6s}
+.object{
+  position:absolute; left:80px; top:210px; width:210px; height:140px; border-radius:22px;
+  border:2px solid var(--heap); background:rgba(85,170,255,.12);
+  box-shadow:0 0 30px rgba(85,170,255,.22);
+  padding:18px 20px; font-family:ui-monospace,Consolas,monospace; line-height:1.8;
+  opacity:0; transform:scale(.85); animation:objectShow 10s infinite;
+}
+.var{
+  position:absolute; left:calc(25% - 420px); top:135px; padding:12px 18px; border-radius:14px;
+  font-weight:800; font-size:19px; color:#101318; box-shadow:0 16px 40px rgba(0,0,0,.35);
+  z-index:5; white-space:nowrap;
+}
+.primitive{background:var(--yellow); animation:primitiveMove 10s infinite}
+.reference{background:var(--green); top:195px; animation:referenceMove 10s infinite}
+.address{
+  position:absolute; left:calc(50% - 24px); top:260px; color:var(--green);
+  font-family:ui-monospace,Consolas,monospace; font-size:18px; opacity:0; animation:addrShow 10s infinite;
+}
+.arrow{
+  position:absolute; height:4px; background:linear-gradient(90deg,var(--green),var(--heap));
+  left:calc(50% - 38px); top:278px; width:0; transform-origin:left; border-radius:10px;
+  box-shadow:0 0 18px rgba(141,240,164,.32); animation:arrowGrow 10s infinite;
+}
+.arrow:after{
+  content:""; position:absolute; right:-8px; top:-6px; width:0; height:0;
+  border-left:12px solid var(--heap); border-top:8px solid transparent; border-bottom:8px solid transparent;
+}
+.caption{
+  position:relative; margin:0 auto; width:min(980px,100%); min-height:92px;
+  border:1px solid rgba(255,255,255,.1); border-radius:22px; background:rgba(255,255,255,.055);
+  padding:18px 26px; font-size:22px; text-align:center; box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+.cap{position:absolute; left:26px; right:26px; opacity:0; transform:translateY(10px); animation:caption 10s infinite}
+.cap1{animation-delay:0s}.cap2{animation-delay:3.3s}.cap3{animation-delay:6.6s}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.1);color:#fff;margin-right:8px}
+@keyframes float{50%{transform:translateY(-10px) scale(1.02)}}
+@keyframes primitiveMove{
+  0%,8%{left:calc(25% - 420px);top:135px;opacity:0;transform:scale(.9)}
+  14%{opacity:1}
+  28%,100%{left:calc(25% - 62px);top:280px;opacity:1;transform:scale(1)}
+}
+@keyframes referenceMove{
+  0%,34%{left:calc(25% - 420px);top:195px;opacity:0;transform:scale(.9)}
+  42%{opacity:1}
+  56%,100%{left:calc(25% - 76px);top:326px;opacity:1;transform:scale(1)}
+}
+@keyframes objectShow{0%,42%{opacity:0;transform:scale(.85)}55%,100%{opacity:1;transform:scale(1)}}
+@keyframes addrShow{0%,55%{opacity:0}62%,100%{opacity:1}}
+@keyframes arrowGrow{0%,58%{width:0;opacity:0}66%,100%{width:390px;opacity:1}}
+@keyframes caption{
+  0%,5%{opacity:0;transform:translateY(10px)}
+  10%,28%{opacity:1;transform:translateY(0)}
+  33%,100%{opacity:0;transform:translateY(-8px)}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="title">
+    <h1>JavaScript Memory: Stack vs Heap</h1>
+    <p>Primitive value সরাসরি Stack-এ, Reference type-এর actual data Heap-এ</p>
+  </div>
+
+  <div class="scene">
+    <div class="card">
+      <div class="stack-box">
+        <div class="stack-fill"></div>
+        <div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div>
+        <div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div>
+      </div>
+      <div class="card-title">Stack <span>fast, ordered memory frames</span></div>
+    </div>
+
+    <div class="card">
+      <div class="heap-space">
+        <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+        <div class="object">student = {<br>&nbsp;&nbsp;name: "Alice",<br>&nbsp;&nbsp;age: 22<br>}</div>
+      </div>
+      <div class="card-title">Heap <span>dynamic objects and arrays</span></div>
+    </div>
+
+    <div class="var primitive">let age = 25</div>
+    <div class="var reference">student → 0xA13F</div>
+    <div class="address">0xA13F</div>
+    <div class="arrow"></div>
+  </div>
+
+  <div class="caption">
+    <div class="cap cap1"><span class="badge">Step 1</span>Primitive data যেমন number/string/boolean — Stack memory-তে রাখা হয়।</div>
+    <div class="cap cap2"><span class="badge">Step 2</span>Object/Array/Function-এর actual value Heap memory-তে তৈরি হয়।</div>
+    <div class="cap cap3"><span class="badge">Step 3</span>Stack-এর variable Heap object-এর address/reference ধরে রাখে।</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stack and Heap Separate Examples</title>
+<style>
+:root{
+  --bg:#080a0f; --text:#f4f7fb; --muted:#aab4c3;
+  --stack:#ff6f86; --heap:#55aaff; --yellow:#ffd166; --green:#8df0a4;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden; color:var(--text);
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255,111,134,.14), transparent 30%),
+    radial-gradient(circle at 82% 25%, rgba(85,170,255,.14), transparent 32%),
+    linear-gradient(135deg,#07080c,#0d121c 58%,#06070a);
+}
+.stage{height:100vh; padding:26px 38px 24px; display:grid; grid-template-rows:auto 1fr auto; gap:18px}
+.title{text-align:center}
+.title h1{margin:0;font-size:36px}
+.title p{margin:8px 0 0;color:var(--muted);font-size:18px}
+
+.scene{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.card{
+  position:relative;height:540px;border-radius:30px;padding:28px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(18,25,38,.58);
+  box-shadow:0 22px 85px rgba(0,0,0,.38);
+  overflow:hidden;
+}
+.card h2{margin:0;text-align:center;font-size:30px}
+.sub{text-align:center;color:var(--muted);margin-top:6px}
+
+.code{
+  position:absolute;top:96px;left:34px;right:34px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;padding:16px 18px;font-family:ui-monospace,Consolas,monospace;
+  font-size:18px;line-height:1.65;
+}
+.stack-box{
+  position:absolute;left:50%;bottom:70px;transform:translateX(-50%);
+  width:260px;height:245px;border:3px solid var(--stack);border-radius:24px;overflow:hidden;
+  box-shadow:0 0 30px rgba(255,111,134,.18), inset 0 0 25px rgba(255,111,134,.08);
+}
+.stack-fill{position:absolute;inset:0;opacity:.19;background:repeating-linear-gradient(135deg,var(--stack) 0 2px,transparent 2px 8px)}
+.slot{height:48.4px;border-top:1.5px solid rgba(255,111,134,.8)}
+.slot:first-child{border-top:0}
+
+.value{
+  position:absolute;padding:11px 16px;border-radius:14px;font-weight:800;color:#101318;
+  box-shadow:0 15px 38px rgba(0,0,0,.34);z-index:4;white-space:nowrap;
+}
+.age{background:var(--yellow);left:-220px;top:210px;animation:ageMove 8s infinite}
+.name{background:#ffc6ff;left:-260px;top:264px;animation:nameMove 8s infinite}
+.bool{background:#fdffb6;left:-245px;top:318px;animation:boolMove 8s infinite}
+
+.heap-space{position:absolute;inset:170px 28px 82px}
+.blob{
+  position:absolute;border:3px solid var(--heap);border-radius:50%;
+  background:repeating-linear-gradient(135deg,rgba(85,170,255,.35) 0 2px,transparent 2px 8px);
+  box-shadow:0 0 28px rgba(85,170,255,.22);animation:float 5s ease-in-out infinite;
+}
+.b1{left:25px;top:20px;width:92px;height:118px}.b2{right:32px;top:4px;width:130px;height:68px;animation-delay:-1s}
+.b3{right:46px;bottom:4px;width:125px;height:145px;animation-delay:-2s}.b4{left:155px;bottom:0;width:85px;height:105px;animation-delay:-.6s}
+
+.object{
+  position:absolute;left:calc(50% - 120px);top:58px;width:240px;height:150px;border-radius:22px;
+  border:2px solid var(--heap);background:rgba(85,170,255,.13);padding:17px 19px;
+  font-family:ui-monospace,Consolas,monospace;line-height:1.75;font-size:17px;
+  box-shadow:0 0 30px rgba(85,170,255,.23);opacity:0;transform:scale(.84);
+  animation:objectShow 8s infinite;
+}
+.ref{
+  background:var(--green);left:-275px;top:250px;animation:refMove 8s infinite;
+}
+.addr{
+  position:absolute;left:128px;top:407px;color:var(--green);font-family:ui-monospace,Consolas,monospace;
+  opacity:0;animation:addrShow 8s infinite;
+}
+.arrow{
+  position:absolute;left:205px;top:415px;height:4px;width:0;border-radius:10px;
+  background:linear-gradient(90deg,var(--green),var(--heap));
+  box-shadow:0 0 16px rgba(141,240,164,.3);animation:arrowGrow 8s infinite;
+}
+.arrow:after{content:"";position:absolute;right:-8px;top:-6px;border-left:12px solid var(--heap);border-top:8px solid transparent;border-bottom:8px solid transparent}
+
+.caption{
+  min-height:84px;border:1px solid rgba(255,255,255,.1);border-radius:22px;
+  background:rgba(255,255,255,.055);padding:17px 24px;text-align:center;font-size:21px;
+  box-shadow:0 12px 42px rgba(0,0,0,.26);position:relative;
+}
+.cap{position:absolute;left:24px;right:24px;opacity:0;transform:translateY(10px);animation:cap 8s infinite}
+.cap1{animation-delay:0s}.cap2{animation-delay:4s}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.12);margin-right:8px}
+
+@keyframes float{50%{transform:translateY(-9px) scale(1.02)}}
+@keyframes ageMove{0%,8%{left:-220px;opacity:0}16%,100%{left:calc(50% - 92px);top:366px;opacity:1}}
+@keyframes nameMove{0%,16%{left:-260px;opacity:0}26%,100%{left:calc(50% - 110px);top:318px;opacity:1}}
+@keyframes boolMove{0%,24%{left:-245px;opacity:0}34%,100%{left:calc(50% - 104px);top:270px;opacity:1}}
+@keyframes objectShow{0%,24%{opacity:0;transform:scale(.84)}38%,100%{opacity:1;transform:scale(1)}}
+@keyframes refMove{0%,35%{left:-275px;opacity:0}48%,100%{left:82px;top:407px;opacity:1}}
+@keyframes addrShow{0%,52%{opacity:0}62%,100%{opacity:1}}
+@keyframes arrowGrow{0%,55%{width:0;opacity:0}68%,100%{width:250px;opacity:1}}
+@keyframes cap{
+  0%,8%{opacity:0;transform:translateY(10px)}
+  14%,42%{opacity:1;transform:translateY(0)}
+  50%,100%{opacity:0;transform:translateY(-8px)}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="title">
+    <h1>Stack ও Heap Memory</h1>
+    <p>দুই পাশে আলাদা example: Primitive বনাম Reference Type</p>
+  </div>
+
+  <div class="scene">
+    <section class="card">
+      <h2>Stack Example</h2>
+      <div class="sub">Primitive values সরাসরি Stack-এ store হয়</div>
+      <div class="code">
+        let age = 25;<br>
+        let name = "Alice";<br>
+        let isStudent = true;
+      </div>
+      <div class="stack-box">
+        <div class="stack-fill"></div>
+        <div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div><div class="slot"></div>
+      </div>
+      <div class="value age">age = 25</div>
+      <div class="value name">name = "Alice"</div>
+      <div class="value bool">isStudent = true</div>
+    </section>
+
+    <section class="card">
+      <h2>Heap Example</h2>
+      <div class="sub">Object-এর actual data Heap-এ, Stack-এ থাকে reference</div>
+      <div class="code">
+        let student = {<br>
+        &nbsp;&nbsp;name: "Alice", age: 22<br>
+        };
+      </div>
+      <div class="heap-space">
+        <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+        <div class="object">0xA13F → {<br>&nbsp;&nbsp;name: "Alice",<br>&nbsp;&nbsp;age: 22<br>}</div>
+      </div>
+      <div class="value ref">student → 0xA13F</div>
+      <div class="addr">Stack reference</div>
+      <div class="arrow"></div>
+    </section>
+  </div>
+
+  <div class="caption">
+    <div class="cap cap1"><span class="badge">Stack</span>number/string/boolean-এর মতো primitive value variable সহ Stack-এ রাখা হয়।</div>
+    <div class="cap cap2"><span class="badge">Heap</span>object/array/function Heap-এ থাকে; variable শুধু address বা reference ধরে রাখে।</div>
+  </div>
+</div>
+</body>
+</html>
